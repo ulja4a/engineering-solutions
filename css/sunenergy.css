@@ -1,0 +1,230 @@
+.seo-article {
+  padding: 20px 0;
+  background-color: #fff;
+  background-image: url("../assets/img/main-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.seo-article__wrapper {
+  width: 100%;
+}
+
+.seo-article__title {
+  margin: 0 0 15px;
+  color: #133b65;
+  font-size: 20px;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.seo-article__intro {
+  margin: 0 0 15px;
+  color: #50657a;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.seo-article__image {
+  width: 100%;
+  margin: 10px 0 20px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.seo-article__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.seo-article__hidden {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.8s ease,
+    opacity 0.5s ease;
+}
+
+.seo-article__hidden.active {
+  max-height: 6000px;
+  opacity: 1;
+}
+
+.seo-article__read-more {
+  display: block;
+  margin: 10px 0 0 auto;
+  padding: 10px 0;
+  border: none;
+  background-color: transparent;
+  color: #133b65;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.seo-article__read-more:hover {
+  text-decoration: underline;
+}
+
+.solar-installation {
+  padding: 20px 0;
+}
+
+.solar-installation__list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: solar-step;
+}
+
+.solar-installation__item {
+  position: relative;
+  margin-bottom: 28px;
+  padding-left: 55px;
+}
+
+.solar-installation__item:last-child {
+  margin-bottom: 0;
+}
+
+.solar-installation__item::before {
+  content: "";
+  position: absolute;
+  top: 38px;
+  left: 18px;
+  width: 2px;
+  height: calc(100% + 12px);
+  background-color: rgba(19, 59, 101, 0.2);
+}
+
+.solar-installation__item:last-child::before {
+  display: none;
+}
+
+.solar-installation__item::after {
+  counter-increment: solar-step;
+  content: counter(solar-step);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #133b65;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.solar-installation__item-title {
+  margin: 0 0 8px;
+  color: #133b65;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.solar-installation__text {
+  margin: 0;
+  color: #50657a;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.solar-types__title {
+  margin: 0 0 15px;
+  color: #133b65;
+  font-size: 18px;
+  line-height: 1.3;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.solar-types__intro {
+  margin: 0 0 15px;
+  color: #50657a;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.solar-type__title {
+  margin: 20px 0 10px;
+  color: #133b65;
+  font-size: 16px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.solar-type__text {
+  margin: 0 0 15px;
+  color: #50657a;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.text-underline {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+@media (min-width: 641px) {
+  .seo-article__title {
+    font-size: 24px;
+  }
+
+  .seo-article__intro,
+  .solar-installation__text,
+  .solar-types__intro,
+  .solar-type__text {
+    font-size: 16px;
+  }
+
+  .solar-installation {
+    padding: 30px 0;
+  }
+
+  .solar-installation__item {
+    margin-bottom: 35px;
+    padding-left: 70px;
+  }
+
+  .solar-installation__item::after {
+    width: 44px;
+    height: 44px;
+    font-size: 17px;
+  }
+
+  .solar-installation__item::before {
+    top: 44px;
+    left: 21px;
+  }
+
+  .solar-installation__item-title,
+  .solar-types__title,
+  .solar-type__title {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .seo-article__wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .seo-article__read-more {
+    font-size: 18px;
+  }
+}

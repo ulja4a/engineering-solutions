@@ -1,14 +1,14 @@
 .seo-article {
   padding: 20px 0;
-  background-color: #fff;
-  background-image: url("../assets/img/main-bg.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 .seo-article__wrapper {
   width: 100%;
+  background-color: #fff;
+    background-image: url(../assets/img/main-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .seo-article__title {
@@ -173,6 +173,16 @@
   line-height: 1.6;
 }
 
+.sunenergy-solar__final {
+  margin: 20px 0 0;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: #d6ebfc;
+  color: #133b65;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 .text-underline {
   text-decoration-line: underline;
   text-decoration-thickness: 1px;
@@ -187,7 +197,8 @@
   .seo-article__intro,
   .solar-installation__text,
   .solar-types__intro,
-  .solar-type__text {
+  .solar-type__text,
+  .sunenergy-solar__final {
     font-size: 16px;
   }
 

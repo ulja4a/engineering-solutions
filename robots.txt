@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Временно запрещаем сканирование видео
+Disallow: /assets/video/
+
+# Не индексируем технические файлы
+Disallow: /send.php
+
+# Карта сайта
+Sitemap: https://enginsolut.com//sitemap.xml

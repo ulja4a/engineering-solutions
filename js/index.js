@@ -317,10 +317,6 @@ document.addEventListener("DOMContentLoaded", function () {
         form.reset();
 
 
-        if (phonePlugin) {
-          phonePlugin.setCountry("ua");
-        }
-
 
         if (typeof onSuccess === "function") {
           onSuccess();

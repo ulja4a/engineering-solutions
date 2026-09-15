@@ -390,7 +390,9 @@
         <button class="callback-popup__close" type="button"></button>
         <h3 class="callback-popup__title">Залиште номер, на який вам зателефонувати</h3>
         <h5 class="callback-popup__comment">Ми перетелефонуємо вам якнайшвидше</h5>
-          <form class="callback-form" data-form="Popup у меню">
+          <form class="callback-form"
+  id="callbackForm"
+  method="post" data-form="Popup у меню">
             <input type="tel" id="phone" name="phone" class="callback-form__input" required>
             <input type="text" name="name" class="callback-form__input" minlength="2" maxlength="30" placeholder="Ваше ім'я" required>
             <button type="submit" class="callback-form__btn">Передзвоніть мені</button>

@@ -4,11 +4,6 @@
 
 .seo-article__wrapper {
   width: 100%;
-  background-color: #fff;
-    background-image: url(../assets/img/main-bg.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
 }
 
 .seo-article__title {

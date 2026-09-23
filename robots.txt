@@ -5,4 +5,4 @@ Allow: /
 Disallow: /send.php
 
 # Карта сайта
-Sitemap: https://enginsolut.com//sitemap.xml
+Sitemap: https://www.enginsolut.com/sitemap.xml

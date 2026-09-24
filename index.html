@@ -235,77 +235,229 @@
         </div>
       </section>
       <section class="projects">
-        <div class="wrapper">
-          <h2 class="projects__title">Наші об'єкти</h2>
-          <div class="projects__slider">
+  <div class="wrapper">
+
+    <h2 class="projects__title">
+      Наші об'єкти
+    </h2>
+    <div class="projects__slider">
+      <button
+        class="projects__arrow projects__arrow--prev"
+        type="button"
+        aria-label="Попередній об'єкт"
+      >
+        &#10094;
+      </button>
+      <div class="projects__viewport">
+        <div class="projects__track">
+          <!-- PROJECT 1 -->
+          <article class="projects__card">
             <button
-              class="projects__arrow projects__arrow--prev"
+              class="projects__open-gallery"
               type="button"
-              aria-label="Попередній об'єкт"
+              aria-label="Переглянути фото сонячної електростанції"
             >
-              &#10094;
+              <img
+                src="assets/img/project-1.jpg"
+                alt="Сонячна електростанція приватного будинку"
+                class="projects__img"
+              >
+              <span class="projects__photo-count">
+                📷 2 фото
+              </span>
             </button>
-            <div class="projects__viewport">
-              <div class="projects__track">
-                <a href="#" class="projects__card">
-                  <img
-                    src="assets/img/project-1.jpg"
-                    alt="Сонячна електростанція"
-                    class="projects__img"
-                  >
-                  <div class="projects__info">
-                    <h3 class="projects__name">Сонячна електростанція приватного будинку</h3>
-                    <p class="projects__text">Полтавська область, Україна</p>
-                  </div>
-                </a>
-
-                <a href="#" class="projects__card">
-                  <img
-                    src="assets/img/project-2.jpg"
-                    alt="Система опалення"
-                    class="projects__img"
-                  >
-                  <div class="projects__info">
-                    <h3 class="projects__name">Водяна тепла підлога, 2-а квартира</h3>
-                    <p class="projects__text">м. Батумі, Грузія</p>
-                  </div>
-                </a>
-
-                <a href="#" class="projects__card">
-                  <img
-                    src="assets/img/project-3.jpg"
-                    alt="система опалення та водопостачання квартири"
-                    class="projects__img"
-                  >
-                  <div class="projects__info">
-                    <h3 class="projects__name">Система опалення та водопостачання квартири</h3>
-                    <p class="projects__text">м. Батумі, Грузія</p>
-                  </div>
-                </a>
-
-                <a href="#" class="projects__card">
-                  <img
-                    src="assets/img/project-4.jpg"
-                    alt="Вентиляція"
-                    class="projects__img"
-                  >
-                  <div class="projects__info">
-                    <h3 class="projects__name">Сонячна електростанція приватного будинку</h3>
-                    <p class="projects__text">Харківська область</p>
-                  </div>
-                </a>
-              </div>
+            <div class="projects__info">
+              <h3 class="projects__name">
+                Гібридна сонячна електростанція на 15 кВт: інвертор + 2 АКБ + сонячні панелі.
+              </h3>
+              <p class="projects__text">
+                Полтавська область, Україна
+              </p>
             </div>
+            <div class="projects__gallery" hidden>
+              <img src="assets/img/project-1.jpg" alt="Сонячна електростанція">
+              <img src="assets/img/project-1-2.jpg" alt="Сонячна електростанція">
+            </div>
+          </article>
+          <!-- PROJECT 2 -->
+          <article class="projects__card">
             <button
-              class="projects__arrow projects__arrow--next"
+              class="projects__open-gallery"
               type="button"
-              aria-label="Наступний об'єкт"
+              aria-label="Переглянути фото теплої підлоги"
             >
-              &#10095;
+              <img
+                src="assets/img/project-2.jpg"
+                alt="Водяна тепла підлога"
+                class="projects__img"
+              >
+              <span class="projects__photo-count">
+                📷 5 фото
+              </span>
             </button>
-          </div>
+            <div class="projects__info">
+              <h3 class="projects__name">
+                Системи опалення та водопостачання: обв'язування розподільчих колекторів, колекторні групи водопостачання, монтаж інсталяції.
+              </h3>
+              <p class="projects__text">
+                м. Батумі, Грузія
+              </p>
+            </div>
+            <div class="projects__gallery" hidden>
+              <img src="assets/img/project-2.jpg" alt="Монтаж теплої підлоги">
+              <img src="assets/img/project-2-2.jpg" alt="Монтаж теплої підлоги">
+              <img src="assets/img/project-2-3.jpg" alt="Монтаж теплої підлоги">
+              <img src="assets/img/project-2-4.jpg" alt="Монтаж теплої підлоги">
+              <img src="assets/img/project-2-5.jpg" alt="Монтаж теплої підлоги">
+            </div>
+          </article>
+          <!-- PROJECT 3 -->
+          <article class="projects__card">
+            <button
+              class="projects__open-gallery"
+              type="button"
+              aria-label="Переглянути фото системи опалення"
+            >
+              <img
+                src="assets/img/project-3.jpg"
+                alt="Система опалення та водопостачання квартири"
+                class="projects__img"
+              >
+              <span class="projects__photo-count">
+                📷 1 фото
+              </span>
+            </button>
+            <div class="projects__info">
+              <h3 class="projects__name">
+                Система опалення та водопостачання квартири: газовий котел, бойлер непрямого нагріву, радіаторна колекторна група.
+              </h3>
+              <p class="projects__text">
+                м. Батумі, Грузія
+              </p>
+            </div>
+            <div class="projects__gallery" hidden>
+              <img src="assets/img/project-3.jpg" alt="Система опалення">
+            </div>
+          </article>
+          <!-- PROJECT 4 -->
+          <article class="projects__card">
+            <button
+              class="projects__open-gallery"
+              type="button"
+              aria-label="Переглянути фото сонячної електростанції"
+            >
+              <img
+                src="assets/img/project-4.jpg"
+                alt="Сонячна електростанція приватного будинку"
+                class="projects__img"
+              >
+              <span class="projects__photo-count">
+                📷 8 фото
+              </span>
+            </button>
+            <div class="projects__info">
+              <h3 class="projects__name">
+                Монтаж гібридних та мережевих наземних сонячних станцій від 15 до 50 кВт: інвертор (мережевий чи гібридний) + металевий наземний каркас + сонячні панелі.
+              </h3>
+              <p class="projects__text">
+                Харківська, Полтавська області
+              </p>
+            </div>
+            <div class="projects__gallery" hidden>
+              <img src="assets/img/project-4.jpg" alt="Сонячна електростанція">
+              <img src="assets/img/project-4-2.jpg" alt="Сонячна електростанція">
+              <img src="assets/img/project-4-3.jpg" alt="Сонячна електростанція">
+              <img src="assets/img/project-4-4.jpg" alt="Сонячна електростанція">
+              <img src="assets/img/project-4-5.jpg" alt="Сонячна електростанція">
+              <img src="assets/img/project-4-6.jpg" alt="Сонячна електростанція">
+              <img src="assets/img/project-4-7.jpg" alt="Сонячна електростанція">
+              <img src="assets/img/project-4-8.jpg" alt="Сонячна електростанція">
+            </div>
+          </article>
+          <!-- PROJECT 5 -->
+          <article class="projects__card">
+            <button
+              class="projects__open-gallery"
+              type="button"
+              aria-label="Переглянути фото сонячної електростанції"
+            >
+              <img
+                src="assets/img/project-5.jpg"
+                alt="Мережева сонячна електростанція на 60 кВт"
+                class="projects__img"
+              >
+              <span class="projects__photo-count">
+                📷 4 фото
+              </span>
+            </button>
+            <div class="projects__info">
+              <h3 class="projects__name">
+                Мережева сонячна електростанція на 60 кВт: мережевий інвертор, сонячні панелі, системи захисту по змінному та постійному струму.
+              </h3>
+              <p class="projects__text">
+                Полтавська область, Україна
+              </p>
+            </div>
+            <div class="projects__gallery" hidden>
+              <img src="assets/img/project-5.jpg" alt="Сонячна електростанція">
+              <img src="assets/img/project-5-2.jpg" alt="Сонячна електростанція">
+              <img src="assets/img/project-5-3.jpg" alt="Сонячна електростанція">
+              <img src="assets/img/project-5-4.jpg" alt="Сонячна електростанція">
+            </div>
+          </article>
         </div>
-      </section>
+      </div>
+      <button
+        class="projects__arrow projects__arrow--next"
+        type="button"
+        aria-label="Наступний об'єкт"
+      >
+        &#10095;
+      </button>
+    </div>
+  </div>
+</section>
+<!-- PROJECT GALLERY MODAL -->
+    <div
+      class="project-gallery"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Галерея проєкту"
+      hidden
+    >
+      <div class="project-gallery__overlay"></div>
+      <div class="project-gallery__content">
+        <button
+          class="project-gallery__close"
+          type="button"
+          aria-label="Закрити галерею"
+        >
+          &times;
+        </button>
+        <div class="project-gallery__main">
+          <button
+            class="project-gallery__arrow project-gallery__arrow--prev"
+            type="button"
+            aria-label="Попереднє фото"
+          >
+            &#10094;
+          </button>
+          <img
+            class="project-gallery__image"
+            src=""
+            alt=""
+          >
+          <button
+            class="project-gallery__arrow project-gallery__arrow--next"
+            type="button"
+            aria-label="Наступне фото"
+          >
+            &#10095;
+          </button>
+        </div>
+        <div class="project-gallery__thumbnails"></div>
+      </div>
+    </div>
     </main>
     <!-- POPUP ------------------------------------------------------------>
     <div class="callback-popup">

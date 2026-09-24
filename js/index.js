@@ -806,6 +806,348 @@ document.addEventListener("DOMContentLoaded", function () {
 
   }
 
+  // =========================================================
+// PROJECT GALLERY
+// =========================================================
+
+const projectGallery =
+  document.querySelector(".project-gallery");
+
+const galleryImage =
+  document.querySelector(".project-gallery__image");
+
+const galleryThumbnails =
+  document.querySelector(".project-gallery__thumbnails");
+
+const galleryClose =
+  document.querySelector(".project-gallery__close");
+
+const galleryOverlay =
+  document.querySelector(".project-gallery__overlay");
+
+const galleryPrev =
+  document.querySelector(".project-gallery__arrow--prev");
+
+const galleryNext =
+  document.querySelector(".project-gallery__arrow--next");
+
+const galleryOpenButtons =
+  document.querySelectorAll(".projects__open-gallery");
+
+
+let galleryImages = [];
+let galleryIndex = 0;
+
+
+// =========================================================
+// OPEN GALLERY
+// =========================================================
+
+function openProjectGallery(card) {
+
+  const images =
+    card.querySelectorAll(
+      ".projects__gallery img"
+    );
+
+
+  galleryImages =
+    Array.from(images).map(
+      function (image) {
+
+        return {
+          src: image.src,
+          alt: image.alt
+        };
+
+      }
+    );
+
+
+  if (galleryImages.length === 0) {
+    return;
+  }
+
+
+  galleryIndex = 0;
+
+
+  createGalleryThumbnails();
+
+  updateGalleryImage();
+
+
+  projectGallery.hidden = false;
+
+  document.body.style.overflow =
+    "hidden";
+
+}
+
+
+// =========================================================
+// UPDATE MAIN IMAGE
+// =========================================================
+
+function updateGalleryImage() {
+
+  if (
+    galleryImages.length === 0
+  ) {
+    return;
+  }
+
+
+  galleryImage.src =
+    galleryImages[galleryIndex].src;
+
+  galleryImage.alt =
+    galleryImages[galleryIndex].alt;
+
+
+  const thumbnails =
+    document.querySelectorAll(
+      ".project-gallery__thumbnail"
+    );
+
+
+  thumbnails.forEach(
+    function (thumbnail, index) {
+
+      thumbnail.classList.toggle(
+        "active",
+        index === galleryIndex
+      );
+
+    }
+  );
+
+}
+
+
+// =========================================================
+// CREATE THUMBNAILS
+// =========================================================
+
+function createGalleryThumbnails() {
+
+  galleryThumbnails.innerHTML = "";
+
+
+  galleryImages.forEach(
+    function (image, index) {
+
+      const button =
+        document.createElement(
+          "button"
+        );
+
+
+      button.type = "button";
+
+      button.className =
+        "project-gallery__thumbnail";
+
+
+      button.setAttribute(
+        "aria-label",
+        `Відкрити фото ${index + 1}`
+      );
+
+
+      const thumbnail =
+        document.createElement(
+          "img"
+        );
+
+
+      thumbnail.src =
+        image.src;
+
+      thumbnail.alt = "";
+
+
+      button.appendChild(
+        thumbnail
+      );
+
+
+      button.addEventListener(
+        "click",
+        function () {
+
+          galleryIndex =
+            index;
+
+          updateGalleryImage();
+
+        }
+      );
+
+
+      galleryThumbnails.appendChild(
+        button
+      );
+
+    }
+  );
+
+}
+
+
+// =========================================================
+// NEXT IMAGE
+// =========================================================
+
+function showNextGalleryImage() {
+
+  galleryIndex++;
+
+
+  if (
+    galleryIndex >=
+    galleryImages.length
+  ) {
+
+    galleryIndex = 0;
+
+  }
+
+
+  updateGalleryImage();
+
+}
+
+
+// =========================================================
+// PREVIOUS IMAGE
+// =========================================================
+
+function showPrevGalleryImage() {
+
+  galleryIndex--;
+
+
+  if (galleryIndex < 0) {
+
+    galleryIndex =
+      galleryImages.length - 1;
+
+  }
+
+
+  updateGalleryImage();
+
+}
+
+
+// =========================================================
+// CLOSE GALLERY
+// =========================================================
+
+function closeProjectGallery() {
+
+  projectGallery.hidden =
+    true;
+
+  document.body.style.overflow =
+    "";
+
+}
+
+
+// =========================================================
+// OPEN BUTTONS
+// =========================================================
+
+galleryOpenButtons.forEach(
+  function (button) {
+
+    button.addEventListener(
+      "click",
+      function () {
+
+        const card =
+          button.closest(
+            ".projects__card"
+          );
+
+
+        openProjectGallery(
+          card
+        );
+
+      }
+    );
+
+  }
+);
+
+
+// =========================================================
+// CONTROLS
+// =========================================================
+
+galleryNext.addEventListener(
+  "click",
+  showNextGalleryImage
+);
+
+
+galleryPrev.addEventListener(
+  "click",
+  showPrevGalleryImage
+);
+
+
+galleryClose.addEventListener(
+  "click",
+  closeProjectGallery
+);
+
+
+galleryOverlay.addEventListener(
+  "click",
+  closeProjectGallery
+);
+
+
+// =========================================================
+// KEYBOARD
+// =========================================================
+
+document.addEventListener(
+  "keydown",
+  function (event) {
+
+    if (projectGallery.hidden) {
+      return;
+    }
+
+
+    if (event.key === "Escape") {
+
+      closeProjectGallery();
+
+    }
+
+
+    if (event.key === "ArrowRight") {
+
+      showNextGalleryImage();
+
+    }
+
+
+    if (event.key === "ArrowLeft") {
+
+      showPrevGalleryImage();
+
+    }
+
+  }
+);
+
 
   // =========================================================
   // READ MORE

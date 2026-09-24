@@ -1151,6 +1151,312 @@ body.popup-open {
 
 }
 
+/* =========================================================
+   PROJECT CARD GALLERY BUTTON
+   ========================================================= */
+
+.projects__open-gallery {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.projects__open-gallery::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(19, 59, 101, 0);
+  transition: background-color 0.3s ease;
+}
+
+.projects__open-gallery:hover::after {
+  background-color: rgba(19, 59, 101, 0.15);
+}
+
+
+/* PHOTO COUNT */
+
+.projects__photo-count {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 2;
+
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  background-color: rgba(19, 59, 101, 0.9);
+  color: #ffffff;
+
+  font-size: 13px;
+  line-height: 1;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   PROJECT GALLERY
+   ========================================================= */
+
+.project-gallery {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px;
+}
+
+.project-gallery[hidden] {
+  display: none;
+}
+
+
+/* BACKGROUND */
+
+.project-gallery__overlay {
+  position: absolute;
+  inset: 0;
+
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* MODAL */
+
+.project-gallery__content {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1000px;
+
+  padding: 45px 15px 20px;
+
+  border-radius: 16px;
+
+  background-color: #ffffff;
+}
+
+
+/* CLOSE */
+
+.project-gallery__close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+
+  z-index: 5;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  background: none;
+
+  color: #133b65;
+
+  font-size: 34px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   MAIN IMAGE
+   ========================================================= */
+
+.project-gallery__main {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 250px;
+}
+
+.project-gallery__image {
+  display: block;
+
+  max-width: 100%;
+  width: auto;
+
+  max-height: 70vh;
+
+  object-fit: contain;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   GALLERY ARROWS
+   ========================================================= */
+
+.project-gallery__arrow {
+  position: absolute;
+  top: 50%;
+
+  z-index: 3;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: rgba(19, 59, 101, 0.9);
+  color: #ffffff;
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+  transform: translateY(-50%);
+
+  transition: background-color 0.3s ease;
+}
+
+.project-gallery__arrow:hover {
+  background-color: #1d527f;
+}
+
+.project-gallery__arrow--prev {
+  left: 10px;
+}
+
+.project-gallery__arrow--next {
+  right: 10px;
+}
+
+
+/* =========================================================
+   THUMBNAILS
+   ========================================================= */
+
+.project-gallery__thumbnails {
+  display: flex;
+  gap: 8px;
+
+  margin-top: 15px;
+  padding-bottom: 5px;
+
+  overflow-x: auto;
+
+  scrollbar-width: thin;
+}
+
+.project-gallery__thumbnail {
+  flex: 0 0 75px;
+
+  width: 75px;
+  height: 60px;
+
+  padding: 0;
+
+  border: 2px solid transparent;
+  border-radius: 7px;
+
+  background: none;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  opacity: 0.6;
+
+  transition:
+    opacity 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.project-gallery__thumbnail:hover {
+  opacity: 1;
+}
+
+.project-gallery__thumbnail.active {
+  border-color: #133b65;
+  opacity: 1;
+}
+
+.project-gallery__thumbnail img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 599px) {
+
+  .project-gallery {
+    padding: 8px;
+  }
+
+  .project-gallery__content {
+    padding:
+      42px
+      8px
+      15px;
+  }
+
+  .project-gallery__image {
+    max-height: 65vh;
+  }
+
+  .project-gallery__arrow {
+    width: 38px;
+    height: 38px;
+
+    font-size: 22px;
+  }
+
+  .project-gallery__arrow--prev {
+    left: 5px;
+  }
+
+  .project-gallery__arrow--next {
+    right: 5px;
+  }
+
+  .project-gallery__thumbnail {
+    flex-basis: 65px;
+
+    width: 65px;
+    height: 52px;
+  }
+
+}
+
 @media (min-width: 1024px) {
 
   .wrapper__header {

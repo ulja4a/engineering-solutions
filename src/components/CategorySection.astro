@@ -1,0 +1,53 @@
+---
+const categories = [
+  {
+    title: "Сонячна енергетика",
+    image: "/assets/img/solar.jpg",
+    href: "/sunenergy",
+  },
+  {
+    title: "Опалення",
+    image: "/assets/img/heating.jpg",
+    href: "/under-development",
+  },
+  {
+    title: "Водопостачання",
+    image: "/assets/img/water.jpg",
+    href: "/under-development",
+  },
+  {
+    title: "Вентиляція",
+    image: "/assets/img/ventilation.jpg",
+    href: "/under-development",
+  },
+];
+---
+
+<section class="sections">
+  <div class="wrapper">
+    <h2 class="sections__title">
+      Оберіть необхідний розділ
+    </h2>
+
+    <div class="sections__grid">
+      {
+        categories.map((service) => (
+          <a
+            href={service.href}
+            class="sections__card"
+          >
+            <img
+              src={service.image}
+              alt={service.title}
+              class="sections__img"
+            />
+
+            <span class="sections__name">
+              {service.title}
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

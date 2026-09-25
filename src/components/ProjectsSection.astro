@@ -1,0 +1,193 @@
+---
+const projects = [
+  {
+    title:
+      "Гібридна сонячна електростанція на 15 кВт: інвертор + 2 АКБ + сонячні панелі.",
+    location: "Полтавська область, Україна",
+    cover: "/assets/img/project-1.jpg",
+    alt: "Сонячна електростанція приватного будинку",
+    galleryLabel: "Переглянути фото сонячної електростанції",
+    images: [
+      "/assets/img/project-1.jpg",
+      "/assets/img/project-1-2.jpg",
+    ],
+  },
+  {
+    title:
+      "Системи опалення та водопостачання: обв'язування розподільчих колекторів, колекторні групи водопостачання, монтаж інсталяції.",
+    location: "м. Батумі, Грузія",
+    cover: "/assets/img/project-2.jpg",
+    alt: "Водяна тепла підлога",
+    galleryLabel: "Переглянути фото теплої підлоги",
+    images: [
+      "/assets/img/project-2.jpg",
+      "/assets/img/project-2-2.jpg",
+      "/assets/img/project-2-3.jpg",
+      "/assets/img/project-2-4.jpg",
+      "/assets/img/project-2-5.jpg",
+    ],
+  },
+  {
+    title:
+      "Система опалення та водопостачання квартири: газовий котел, бойлер непрямого нагріву, радіаторна колекторна група.",
+    location: "м. Батумі, Грузія",
+    cover: "/assets/img/project-3.jpg",
+    alt: "Система опалення та водопостачання квартири",
+    galleryLabel: "Переглянути фото системи опалення",
+    images: [
+      "/assets/img/project-3.jpg",
+    ],
+  },
+  {
+    title:
+      "Монтаж гібридних та мережевих наземних сонячних станцій від 15 до 50 кВт: інвертор (мережевий чи гібридний) + металевий наземний каркас + сонячні панелі.",
+    location: "Харківська, Полтавська області",
+    cover: "/assets/img/project-4.jpg",
+    alt: "Сонячна електростанція приватного будинку",
+    galleryLabel: "Переглянути фото сонячної електростанції",
+    images: [
+      "/assets/img/project-4.jpg",
+      "/assets/img/project-4-2.jpg",
+      "/assets/img/project-4-3.jpg",
+      "/assets/img/project-4-4.jpg",
+      "/assets/img/project-4-5.jpg",
+      "/assets/img/project-4-6.jpg",
+      "/assets/img/project-4-7.jpg",
+      "/assets/img/project-4-8.jpg",
+    ],
+  },
+  {
+    title:
+      "Мережева сонячна електростанція на 60 кВт: мережевий інвертор, сонячні панелі, системи захисту по змінному та постійному струму.",
+    location: "Полтавська область, Україна",
+    cover: "/assets/img/project-5.jpg",
+    alt: "Мережева сонячна електростанція на 60 кВт",
+    galleryLabel: "Переглянути фото сонячної електростанції",
+    images: [
+      "/assets/img/project-5.jpg",
+      "/assets/img/project-5-2.jpg",
+      "/assets/img/project-5-3.jpg",
+      "/assets/img/project-5-4.jpg",
+    ],
+  },
+];
+---
+
+<section class="projects">
+  <div class="wrapper">
+    <h2 class="projects__title">
+      Наші об'єкти
+    </h2>
+
+    <div class="projects__slider">
+      <button
+        class="projects__arrow projects__arrow--prev"
+        type="button"
+        aria-label="Попередній об'єкт"
+      >
+        &#10094;
+      </button>
+
+      <div class="projects__viewport">
+        <div class="projects__track">
+          {
+            projects.map((project) => (
+              <article class="projects__card">
+                <button
+                  class="projects__open-gallery"
+                  type="button"
+                  aria-label={project.galleryLabel}
+                >
+                  <img
+                    src={project.cover}
+                    alt={project.alt}
+                    class="projects__img"
+                  />
+
+                  <span class="projects__photo-count">
+                    📷 {project.images.length} фото
+                  </span>
+                </button>
+
+                <div class="projects__info">
+                  <h3 class="projects__name">
+                    {project.title}
+                  </h3>
+
+                  <p class="projects__text">
+                    {project.location}
+                  </p>
+                </div>
+
+                <div class="projects__gallery" hidden>
+                  {
+                    project.images.map((image) => (
+                      <img
+                        src={image}
+                        alt={project.alt}
+                      />
+                    ))
+                  }
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+
+      <button
+        class="projects__arrow projects__arrow--next"
+        type="button"
+        aria-label="Наступний об'єкт"
+      >
+        &#10095;
+      </button>
+    </div>
+  </div>
+</section>
+
+<div
+  class="project-gallery"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Галерея проєкту"
+  hidden
+>
+  <div class="project-gallery__overlay"></div>
+
+  <div class="project-gallery__content">
+    <button
+      class="project-gallery__close"
+      type="button"
+      aria-label="Закрити галерею"
+    >
+      &times;
+    </button>
+
+    <div class="project-gallery__main">
+      <button
+        class="project-gallery__arrow project-gallery__arrow--prev"
+        type="button"
+        aria-label="Попереднє фото"
+      >
+        &#10094;
+      </button>
+
+      <img
+        class="project-gallery__image"
+        src=""
+        alt=""
+      />
+
+      <button
+        class="project-gallery__arrow project-gallery__arrow--next"
+        type="button"
+        aria-label="Наступне фото"
+      >
+        &#10095;
+      </button>
+    </div>
+
+    <div class="project-gallery__thumbnails"></div>
+  </div>
+</div>

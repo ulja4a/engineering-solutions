@@ -1,0 +1,56 @@
+---
+interface Props {
+  source: string;
+}
+
+const { source } = Astro.props;
+---
+
+<section class="consultation">
+  <div class="wrapper">
+    <div class="consultation__content">
+      <h2 class="consultation__title">
+        Отримати консультацію
+      </h2>
+
+      <p class="consultation__text">
+        Залиште контактні дані і наші фахівці зв'яжуться з вами.
+      </p>
+
+      <form class="consultation__form">
+        <input
+          type="hidden"
+          name="source"
+          value={source}
+        />
+
+        <input
+          type="text"
+          name="name"
+          class="consultation__input"
+          minlength="2"
+          maxlength="30"
+          placeholder="Ваше ім'я"
+          required
+        />
+
+        <input
+          type="tel"
+          id={`consultationPhone-${source}`}
+          name="phone"
+          class="consultation__input consultation__phone"
+          required
+        />
+
+        <button
+          type="submit"
+          class="consultation__btn"
+        >
+          Замовити дзвінок
+        </button>
+
+        <p class="consultation__message"></p>
+      </form>
+    </div>
+  </div>
+</section>

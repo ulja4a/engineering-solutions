@@ -1,2 +1,6 @@
 send.php
 PHPMailer/
+
+node_modules/
+dist/
+.astro/

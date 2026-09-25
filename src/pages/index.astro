@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSlider from "../components/HeroSlider.astro";
+import IntroSection from "../components/IntroSection.astro";
+import VideoSection from "../components/VideoSection.astro";
+import CategorySection from "../components/CategorySection.astro";
+import ConsultationSection from "../components/ConsultationSection.astro";
+import ProjectsSection from "../components/ProjectsSection.astro";
+---
+
+<BaseLayout
+  title="Сонячні електростанції та інженерні системи | Харків, Полтава"
+  description="Монтаж сонячних електростанцій, систем опалення та інженерних мереж для дому і бізнесу. Проєктування, підбір обладнання та монтаж під ключ у Харкові, Полтаві та по Україні."
+  canonical="https://www.enginsolut.com/"
+>
+
+  <main class="main">
+    <HeroSlider />
+    <IntroSection />
+    <VideoSection />
+    <CategorySection />
+    <ConsultationSection source="home-consultation" />
+    <ProjectsSection />
+  </main>
+
+</BaseLayout>
+
+<script>
+  import "../scripts/heroSlider.js";
+  import "../scripts/readMore.js";
+  import "../scripts/projectsSlider.js";
+  import "../scripts/projectGallery.js";
+</script>

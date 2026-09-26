@@ -123,6 +123,21 @@ forms.forEach((form) => {
 
       nameInput.value = "";
       phoneInput.value = "";
+
+        const callbackOverlay = form.closest(
+          ".callback-popup-overlay"
+        );
+
+        if (callbackOverlay) {
+          setTimeout(() => {
+            callbackOverlay.classList.remove("active");
+            document.body.classList.remove("popup-open");
+
+            if (message) {
+              message.textContent = "";
+            }
+          }, 1500);
+        }
     } catch (error) {
       console.error("Form submit error:", error);
 

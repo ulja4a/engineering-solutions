@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ConsultationSection from "../components/ConsultationSection.astro";
+import PoltavaSolarArticle from "../components/PoltavaSolarArticle.astro";
+import PoltavaProjects from "../components/PoltavaProjects.astro";
+
+import "../styles/poltava.css";
+---
+
+<BaseLayout
+  title="Монтаж сонячних електростанцій у Полтаві та області | Інженерні рішення"
+  description="Монтаж сонячних електростанцій і сонячних панелей у Полтаві та Полтавській області. Гібридні та мережеві СЕС, монтаж на даху й землі, підбір обладнання та встановлення під ключ."
+  canonical="https://www.enginsolut.com/poltava"
+>
+  <main class="main">
+    <PoltavaSolarArticle />
+
+    <ConsultationSection source="poltava-consultation" />
+
+    <PoltavaProjects />
+  </main>
+</BaseLayout>
+
+<script>
+  import "../scripts/projectsSlider.js";
+  import "../scripts/projectGallery.js";
+</script>

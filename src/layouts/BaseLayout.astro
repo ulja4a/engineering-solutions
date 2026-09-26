@@ -9,12 +9,14 @@ interface Props {
   title: string;
   description: string;
   canonical: string;
+  robots?: string;
 }
 
 const {
   title,
   description,
-  canonical
+  canonical,
+  robots,
 } = Astro.props;
 ---
 
@@ -35,6 +37,8 @@ const {
       name="description"
       content={description}
     />
+
+    {robots && <meta name="robots" content={robots} />}
 
     <link
       rel="stylesheet"

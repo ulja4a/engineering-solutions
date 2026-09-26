@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import "../styles/under-development.css";
+---
+
+<BaseLayout
+  title="Розділ у розробці | Інженерні рішення"
+  description=""
+  canonical="https://www.enginsolut.com/under-development"
+  robots="noindex, follow"
+>
+  <main class="main">
+    <section class="development">
+      <div class="wrapper">
+        <div class="development__content">
+          <h1 class="development__title">
+            Розділ у розробці
+          </h1>
+
+          <p class="development__text">
+            Вибачте, цей розділ сайту наразі знаходиться у розробці.
+            Якщо вам потрібна консультація щодо опалення, водопостачання
+            або інших інженерних систем — зв’яжіться з нами.
+          </p>
+
+          <div class="development__buttons">
+            <button
+              type="button"
+              class="development__btn menu__callback-link"
+              data-source="Сторінка у розробці — консультація"
+            >
+              Отримати консультацію
+            </button>
+
+            <a href="/" class="development__link">
+              На головну
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

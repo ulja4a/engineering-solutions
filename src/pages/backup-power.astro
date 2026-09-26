@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ConsultationSection from "../components/ConsultationSection.astro";
+import BackupPowerArticle from "../components/BackupPowerArticle.astro";
+import BackupPowerProjects from "../components/BackupPowerProjects.astro";
+
+import "../styles/backup-power.css";
+---
+
+<BaseLayout
+  title="Резервне живлення квартири з інвертором та акумулятором Deye"
+  description="Резервне живлення квартири та невеликого будинку з інвертором і акумулятором Deye. Підбір обладнання, проєктування та монтаж систем під ключ."
+  canonical="https://www.enginsolut.com/backup-power"
+>
+  <main class="main">
+    <BackupPowerArticle />
+
+    <ConsultationSection source="backup-power-consultation" />
+
+    <BackupPowerProjects />
+  </main>
+</BaseLayout>
+
+<script>
+  import "../scripts/projectsSlider.js";
+  import "../scripts/projectGallery.js";
+</script>

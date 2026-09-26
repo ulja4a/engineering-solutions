@@ -73,11 +73,34 @@ forms.forEach((form) => {
       ? iti.getNumber()
       : phoneInput.value.trim();
 
+    // -----------------------------
+    // Данные для send.php
+    // -----------------------------
+
     const formData = new FormData();
 
     formData.append("name", name);
     formData.append("phone", phone);
-    formData.append("source", source);
+    formData.append("form_source", source);
+
+    formData.append(
+      "page_title",
+      document.title
+    );
+
+    formData.append(
+      "page_url",
+      window.location.href
+    );
+
+    formData.append(
+      "page_path",
+      window.location.pathname
+    );
+
+    // -----------------------------
+    // Отправляем на сервер
+    // -----------------------------
 
     try {
       const response = await fetch("/send.php", {
@@ -85,8 +108,12 @@ forms.forEach((form) => {
         body: formData,
       });
 
-      if (!response.ok) {
-        throw new Error("Помилка відправки форми");
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(
+          data.message || "Помилка відправки форми"
+        );
       }
 
       if (message) {
@@ -96,9 +123,8 @@ forms.forEach((form) => {
 
       nameInput.value = "";
       phoneInput.value = "";
-      
     } catch (error) {
-      console.error(error);
+      console.error("Form submit error:", error);
 
       if (message) {
         message.textContent =

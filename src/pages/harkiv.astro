@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ConsultationSection from "../components/ConsultationSection.astro";
+import HarkivSolarArticle from "../components/HarkivSolarArticle.astro";
+import HarkivProjects from "../components/HarkivProjects.astro";
+
+import "../styles/harkiv.css";
+---
+
+<BaseLayout
+  title="Монтаж сонячних електростанцій у Харкові та області | Інженерні рішення"
+  description="Монтаж сонячних електростанцій у Харкові та Харківській області. Встановлення сонячних панелей на похилому і плоскому даху, землі та фасаді. Проєктування, підбір обладнання та монтаж СЕС."
+  canonical="https://www.enginsolut.com/harkiv"
+>
+  <main class="main">
+    <HarkivSolarArticle />
+
+    <ConsultationSection source="harkiv-consultation" />
+
+    <HarkivProjects />
+  </main>
+</BaseLayout>
+
+<script>
+  import "../scripts/projectsSlider.js";
+  import "../scripts/projectGallery.js";
+</script>

@@ -1,0 +1,121 @@
+---
+import ProjectGallery from "./ProjectGallery.astro";
+
+const projects = [
+  {
+    title: "Сонячна електростанція на 30 кВт",
+    location: "Харківська область",
+    cover: "/assets/img/harkiv_project-1.jpg",
+    alt: "Сонячна електростанція на 30 кВт, Харківська область",
+    galleryLabel: "Переглянути фото сонячної електростанції на 30 кВт",
+    images: [
+      "/assets/img/harkiv_project-1.jpg",
+    ],
+  },
+  {
+    title: "Сонячна електростанція на 12 кВт",
+    location: "Харківська область",
+    cover: "/assets/img/harkiv_project-2.jpg",
+    alt: "Сонячна електростанція на 12 кВт, Харківська область",
+    galleryLabel: "Переглянути фото сонячної електростанції на 12 кВт",
+    images: [
+      "/assets/img/harkiv_project-2.jpg",
+    ],
+  },
+  {
+    title: "Сонячна електростанція на 6 кВт",
+    location: "Харківська область",
+    cover: "/assets/img/harkiv_project-3.jpg",
+    alt: "Сонячна електростанція на 6 кВт, Харківська область",
+    galleryLabel: "Переглянути фото сонячної електростанції на 6 кВт",
+    images: [
+      "/assets/img/harkiv_project-3.jpg",
+    ],
+  },
+  {
+    title: "Сонячна електростанція на 80 кВт",
+    location: "Харківська область",
+    cover: "/assets/img/harkiv_project-4.jpg",
+    alt: "Сонячна електростанція на 80 кВт, Харківська область",
+    galleryLabel: "Переглянути фото сонячної електростанції на 80 кВт",
+    images: [
+      "/assets/img/harkiv_project-4.jpg",
+    ],
+  },
+];
+---
+
+<section class="projects">
+  <div class="wrapper">
+    <h2 class="projects__title">
+      Наші об'єкти
+    </h2>
+
+    <div class="projects__slider">
+      <button
+        class="projects__arrow projects__arrow--prev"
+        type="button"
+        aria-label="Попередній об'єкт"
+      >
+        &#10094;
+      </button>
+
+      <div class="projects__viewport">
+        <div class="projects__track">
+          {
+            projects.map((project) => (
+              <article class="projects__card">
+                <button
+                  class="projects__open-gallery"
+                  type="button"
+                  aria-label={project.galleryLabel}
+                >
+                  <img
+                    src={project.cover}
+                    alt={project.alt}
+                    class="projects__img"
+                  />
+
+                  <span class="projects__photo-count">
+                    📷 {project.images.length} фото
+                  </span>
+                </button>
+
+                <div class="projects__info">
+                  <h3 class="projects__name">
+                    {project.title}
+                  </h3>
+
+                  <p class="projects__text">
+                    {project.location}
+                  </p>
+                </div>
+
+                <div class="projects__gallery" hidden>
+                  {
+                    project.images.map((image) => (
+                      <img
+                        src={image}
+                        alt={project.alt}
+                      />
+                    ))
+                  }
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+
+      <button
+        class="projects__arrow projects__arrow--next"
+        type="button"
+        aria-label="Наступний об'єкт"
+      >
+        &#10095;
+      </button>
+    </div>
+  </div>
+</section>
+
+<ProjectGallery />

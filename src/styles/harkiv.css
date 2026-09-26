@@ -1,0 +1,160 @@
+.kharkiv-solar {
+  padding: 20px 0;
+  background-color: #fff;
+  background-image: url("/assets/img/main-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.kharkiv-solar__article {
+  width: 100%;
+}
+
+.kharkiv-solar__title {
+  margin: 0 0 15px;
+  color: #133b65;
+  font-size: 20px;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.kharkiv-solar__subtitle {
+  margin: 20px 0 10px;
+  color: #133b65;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.kharkiv-solar__mounting {
+  margin-top: 20px;
+}
+
+.kharkiv-solar__mounting-title {
+  margin: 0 0 10px;
+  color: #133b65;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.kharkiv-solar__text {
+  margin: 0 0 15px;
+  color: #50657a;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.kharkiv-solar__image {
+  width: 100%;
+  margin: 10px 0 20px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.kharkiv-solar__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.kharkiv-solar__final {
+  margin: 20px 0 0;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: #d6ebfc;
+  color: #133b65;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.article-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 30px 0;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: #d6ebfc;
+}
+
+.article-cta__content {
+  flex: 1;
+}
+
+.article-cta__title {
+  margin: 0 0 10px;
+  color: #133b65;
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.article-cta__text {
+  margin: 0;
+  color: #50657a;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.article-cta__btn {
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 22px;
+  border: 2px solid #133b65;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #133b65;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.article-cta__btn:hover {
+  background-color: #fff;
+  color: #133b65;
+}
+
+@media (min-width: 641px) {
+  .kharkiv-solar__title {
+    font-size: 24px;
+  }
+
+  .kharkiv-solar__subtitle {
+    font-size: 20px;
+  }
+
+  .kharkiv-solar__mounting-title {
+    font-size: 20px;
+  }
+
+  .kharkiv-solar__text,
+  .kharkiv-solar__final,
+  .article-cta__text {
+    font-size: 16px;
+  }
+
+  .article-cta {
+    flex-direction: row;
+    align-items: center;
+    padding: 30px;
+  }
+
+  .article-cta__btn {
+    width: auto;
+    min-width: 220px;
+    flex-shrink: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .kharkiv-solar__article {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}

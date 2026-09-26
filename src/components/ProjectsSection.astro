@@ -1,4 +1,7 @@
 ---
+
+import ProjectGallery from "./ProjectGallery.astro";
+
 const projects = [
   {
     title:
@@ -146,48 +149,4 @@ const projects = [
   </div>
 </section>
 
-<div
-  class="project-gallery"
-  role="dialog"
-  aria-modal="true"
-  aria-label="Галерея проєкту"
-  hidden
->
-  <div class="project-gallery__overlay"></div>
-
-  <div class="project-gallery__content">
-    <button
-      class="project-gallery__close"
-      type="button"
-      aria-label="Закрити галерею"
-    >
-      &times;
-    </button>
-
-    <div class="project-gallery__main">
-      <button
-        class="project-gallery__arrow project-gallery__arrow--prev"
-        type="button"
-        aria-label="Попереднє фото"
-      >
-        &#10094;
-      </button>
-
-      <img
-        class="project-gallery__image"
-        src=""
-        alt=""
-      />
-
-      <button
-        class="project-gallery__arrow project-gallery__arrow--next"
-        type="button"
-        aria-label="Наступне фото"
-      >
-        &#10095;
-      </button>
-    </div>
-
-    <div class="project-gallery__thumbnails"></div>
-  </div>
-</div>
+<ProjectGallery />

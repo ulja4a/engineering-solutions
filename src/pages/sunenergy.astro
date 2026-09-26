@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ConsultationSection from "../components/ConsultationSection.astro";
+import SolarArticle from "../components/SolarArticle.astro";
+import SolarExamples from "../components/SolarExamples.astro";
+import SolarProjects from "../components/SolarProjects.astro";
+
+import "../styles/sunenergy.css";
+---
+
+<BaseLayout
+  title="Монтаж сонячних електростанцій під ключ | Інженерні рішення"
+  description="Монтаж сонячних електростанцій під ключ для дому та бізнесу. Проєктування, підбір обладнання, встановлення панелей, інверторів і систем накопичення енергії."
+  canonical="https://www.enginsolut.com/sunenergy"
+>
+  <main class="main">
+    <SolarArticle />
+
+    <ConsultationSection source="sunenergy-consultation" />
+
+    <SolarExamples />
+
+    <SolarProjects />
+  </main>
+</BaseLayout>
+
+<script>
+  import "../scripts/solarArticle.js";
+  import "../scripts/projectsSlider.js";
+  import "../scripts/projectGallery.js";
+</script>

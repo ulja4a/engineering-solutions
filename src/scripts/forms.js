@@ -43,6 +43,7 @@ forms.forEach((form) => {
 
     if (message) {
       message.textContent = "";
+      message.classList.remove("active");
     }
 
     const name = nameInput.value.trim();
@@ -53,6 +54,7 @@ forms.forEach((form) => {
       if (message) {
         message.textContent =
           "Будь ласка, введіть коректне ім'я.";
+        message.classList.add("active");
       }
 
       return;
@@ -63,6 +65,7 @@ forms.forEach((form) => {
       if (message) {
         message.textContent =
           "Будь ласка, введіть коректний номер телефону.";
+        message.classList.add("active");
       }
 
       return;
@@ -119,6 +122,7 @@ forms.forEach((form) => {
       if (message) {
         message.textContent =
           "Дякуємо! Ваша заявка успішно відправлена.";
+        message.classList.add("active");
       }
 
       nameInput.value = "";
@@ -135,6 +139,7 @@ forms.forEach((form) => {
 
             if (message) {
               message.textContent = "";
+              message.classList.remove("active");
             }
           }, 1500);
         }
@@ -144,6 +149,7 @@ forms.forEach((form) => {
       if (message) {
         message.textContent =
           "Не вдалося відправити заявку. Спробуйте ще раз.";
+        message.classList.add("active");
       }
     }
   });

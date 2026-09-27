@@ -3,46 +3,46 @@ const categories = [
   {
     title: "Сонячна енергетика",
     image: "/assets/img/solar.jpg",
-    href: "/sunenergy",
+    href: "/sunenergy/",
   },
   {
     title: "Опалення",
     image: "/assets/img/heating.jpg",
-    href: "/under-development",
+    href: "/under-development/",
   },
   {
     title: "Водопостачання",
     image: "/assets/img/water.jpg",
-    href: "/under-development",
+    href: "/under-development/",
   },
   {
     title: "Вентиляція",
     image: "/assets/img/ventilation.jpg",
-    href: "/under-development",
+    href: "/under-development/",
   },
 ];
 ---
 
-<section class="sections">
+<section class="categories">
   <div class="wrapper">
-    <h2 class="sections__title">
+    <h2 class="categories__title">
       Оберіть необхідний розділ
     </h2>
 
-    <div class="sections__grid">
+    <div class="categories__grid">
       {
         categories.map((service) => (
           <a
             href={service.href}
-            class="sections__card"
+            class="categories__card"
           >
             <img
               src={service.image}
               alt={service.title}
-              class="sections__img"
+              class="categories__img"
             />
 
-            <span class="sections__name">
+            <span class="categories__name">
               {service.title}
             </span>
           </a>

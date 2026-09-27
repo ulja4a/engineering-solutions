@@ -29,6 +29,8 @@ body.popup-open {
 }
 
 .container {
+  width: 100%;
+  max-width: 1360px;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
@@ -573,7 +575,7 @@ body.popup-open {
 
 /* Секция розділов*/
 
-.sections {
+.categories {
   position: relative;
   padding: 20px 0;
   background-image: url("/assets/img/main-bg.png");
@@ -582,7 +584,7 @@ body.popup-open {
   background-repeat: no-repeat;
 }
 
-.sections__title {
+.categories__title {
   margin: 0 0 35px;
   text-align: center;
   color: #133b65;
@@ -591,7 +593,7 @@ body.popup-open {
   text-transform: uppercase;
 }
 
-.sections__grid {
+.categories__grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
@@ -599,7 +601,7 @@ body.popup-open {
 
 @media (min-width: 600px) {
 
-  .sections__grid {
+  .categories__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -607,17 +609,17 @@ body.popup-open {
 
 @media (min-width: 1024px) {
 
-  .sections__grid {
+  .categories__grid {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .sections__title {
+  .categories__title {
     font-size: 24px;
   }
 
 }
 
-.sections__card {
+.categories__card {
   position: relative;
   display: block;
   width: 100%;
@@ -628,13 +630,13 @@ body.popup-open {
 }
 
 @media (min-width: 400px) {
-  .sections__card {
+  .categories__card {
     height: 300px;
     aspect-ratio: auto;
   }
 }
 
-.sections__img {
+.categories__img {
   display: block;
   width: 100%;
   height: 100%;
@@ -645,7 +647,7 @@ body.popup-open {
 
 /* затемнение поверх фото */
 
-.sections__card::after {
+.categories__card::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -655,7 +657,7 @@ body.popup-open {
 
 /* текст */
 
-.sections__name {
+.categories__name {
   position: absolute;
   left: 20px;
   right: 20px;
@@ -669,11 +671,11 @@ body.popup-open {
 
 /* hover */
 
-.sections__card:hover .sections__img {
+.categories__card:hover .categories__img {
   transform: scale(1);
 }
 
-.sections__card:hover::after {
+.categories__card:hover::after {
   background-color: rgba(0, 0, 0, 0.25);
 }
 

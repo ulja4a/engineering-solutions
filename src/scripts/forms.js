@@ -23,7 +23,7 @@ forms.forEach((form) => {
 
   if (window.intlTelInput) {
     iti = window.intlTelInput(phoneInput, {
-      initialCountry: "ua",
+      initialCountry: form.dataset.initialCountry || "ua",
       countrySelectorMode: "DROPDOWN",
       separateDialCode: true,
 

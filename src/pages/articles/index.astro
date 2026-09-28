@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArticlesList from "../../components/ArticlesList.astro";
+
+import "../../styles/articles.css";
+---
+
+<BaseLayout
+  title="Статті про інженерні системи та сонячну енергетику | Інженерні рішення"
+  description="Корисні матеріали про сонячні електростанції, системи опалення, водопостачання, вентиляцію та резервне живлення."
+  canonical="https://www.enginsolut.com/articles/"
+>
+  <main>
+    <ArticlesList />
+  </main>
+</BaseLayout>

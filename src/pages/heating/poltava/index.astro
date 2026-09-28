@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import PoltavaHeatingArticle from "../../../components/PoltavaHeatingArticle.astro";
+import ConsultationSection from "../../../components/ConsultationSection.astro";
+import PoltavaHeatingProjects from "../../../components/PoltavaHeatingProjects.astro";
+
+const title =
+  "Монтаж опалення у Полтаві під ключ — системи опалення будинку";
+
+const description =
+  "Монтаж систем опалення у Полтаві та Полтавській області під ключ. Проєктування, монтаж котелень, радіаторів і теплої підлоги. Підбір обладнання та розрахунок вартості.";
+
+const canonical = "https://www.enginsolut.com/heating/poltava/";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+>
+  <PoltavaHeatingArticle />
+
+  <ConsultationSection
+    source="Консультація — Опалення Полтава"
+  />
+
+  <PoltavaHeatingProjects />
+</BaseLayout>
+
+<script>
+  import "../../../scripts/solarArticle.js";
+  import "../../../scripts/projectsSlider.js";
+  import "../../../scripts/projectGallery.js";
+</script>

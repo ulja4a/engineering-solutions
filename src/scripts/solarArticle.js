@@ -11,8 +11,14 @@ if (seoArticleBtn && seoArticleContent) {
     const isOpen =
       seoArticleContent.classList.toggle("active");
 
-    seoArticleBtn.textContent =
-      isOpen ? "Згорнути" : "Читати далі";
+    const moreText =
+      seoArticleBtn.dataset.moreText || "Читати далі";
+
+    const lessText =
+      seoArticleBtn.dataset.lessText || "Згорнути";
+    
+      seoArticleBtn.textContent =
+        isOpen ? lessText : moreText;
 
     seoArticleBtn.setAttribute(
       "aria-expanded",

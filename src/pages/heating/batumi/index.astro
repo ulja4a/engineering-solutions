@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import BatumiHeatingArticle from "../../../components/BatumiHeatingArticle.astro";
+import ConsultationSection from "../../../components/ConsultationSection.astro";
+import BatumiHeatingProjects from "../../../components/BatumiHeatingProjects.astro";
+
+const title =
+  "Монтаж отопления в Батуми под ключ — теплый пол и газовые котлы";
+
+const description =
+  "Монтаж систем отопления в Батуми под ключ. Проектирование, установка газовых котлов, водяного теплого пола и радиаторов. Расчет и подбор оборудования.";
+
+const canonical = "https://www.enginsolut.com/heating/batumi/";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+>
+  <main>
+    <BatumiHeatingArticle />
+
+    <div id="consultation">
+      <ConsultationSection
+        source="Консультация — Отопление Батуми"
+        lang="ru"
+        initialCountry="ge"
+      />
+    </div>
+
+    <BatumiHeatingProjects />
+  </main>
+</BaseLayout>
+
+<script>
+  import "../../../scripts/solarArticle.js";
+  import "../../../scripts/projectsSlider.js";
+  import "../../../scripts/projectGallery.js";
+</script>

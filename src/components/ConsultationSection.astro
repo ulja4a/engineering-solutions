@@ -1,23 +1,47 @@
 ---
 interface Props {
   source: string;
+  lang?: "uk" | "ru";
+  initialCountry?: string;
 }
 
-const { source } = Astro.props;
+const {
+  source,
+  lang = "uk",
+  initialCountry = "ua",
+} = Astro.props;
+
+const texts = {
+  uk: {
+    title: "Отримати консультацію",
+    subtitle: "Залиште контактні дані і наші фахівці зв'яжуться з вами.",
+    name: "Ваше ім'я",
+    button: "Замовити дзвінок",
+  },
+  ru: {
+    title: "Получить консультацию",
+    subtitle: "Оставьте контактные данные, и наши специалисты свяжутся с вами.",
+    name: "Ваше имя",
+    button: "Заказать звонок",
+  },
+};
+
+const text = texts[lang];
 ---
 
 <section class="consultation">
   <div class="wrapper">
     <div class="consultation__content">
-      <h2 class="consultation__title">
-        Отримати консультацію
-      </h2>
+      <h2 class="consultation__title">{text.title}</h2>
 
       <p class="consultation__text">
-        Залиште контактні дані і наші фахівці зв'яжуться з вами.
+        {text.subtitle}
       </p>
 
-      <form class="consultation__form">
+      <form
+        class="consultation__form"
+        data-initial-country={initialCountry}
+      >
         <input
           type="hidden"
           name="source"
@@ -30,7 +54,7 @@ const { source } = Astro.props;
           class="consultation__input"
           minlength="2"
           maxlength="30"
-          placeholder="Ваше ім'я"
+          placeholder={text.name}
           required
         />
 
@@ -46,7 +70,7 @@ const { source } = Astro.props;
           type="submit"
           class="consultation__btn"
         >
-          Замовити дзвінок
+          {text.button}
         </button>
 
         <p class="consultation__message"></p>

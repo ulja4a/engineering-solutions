@@ -1,0 +1,124 @@
+---
+import ProjectGallery from "./ProjectGallery.astro";
+
+const projects = [
+  {
+    title: "Монтаж колекторних груп",
+    location: "Полтавська область, Україна",
+    cover: "/assets/img/heating-project-01-01.jpg",
+    alt: "Монтаж колекторних груп системи опалення у Полтавській області",
+    galleryLabel:
+      "Переглянути фото монтажу колекторних груп у Полтавській області",
+    images: [
+      "/assets/img/heating-project-01-01.jpg",
+      "/assets/img/heating-project-01-02.jpg",
+      "/assets/img/heating-project-01-03.jpg",
+    ],
+  },
+  {
+    title: "Монтаж котельні",
+    location: "Харківська область, Україна",
+    cover: "/assets/img/heating-project-02-01.jpg",
+    alt: "Монтаж котельні у Харківській області",
+    galleryLabel: "Переглянути фото монтажу котельні",
+    images: [
+      "/assets/img/heating-project-02-01.jpg",
+    ],
+  },
+  {
+    title: "Монтаж котельні",
+    location: "Харківська область, Україна",
+    cover: "/assets/img/heating-project-03-01.jpg",
+    alt: "Монтаж котельні у Харківській області",
+    galleryLabel: "Переглянути фото монтажу котельні",
+    images: [
+      "/assets/img/heating-project-03-01.jpg",
+    ],
+  },
+  {
+    title: "Монтаж котельні",
+    location: "Харківська область, Україна",
+    cover: "/assets/img/heating-project-04-01.jpg",
+    alt: "Монтаж котельні у Харківській області",
+    galleryLabel: "Переглянути фото монтажу котельні",
+    images: [
+      "/assets/img/heating-project-04-01.jpg",
+    ],
+  },
+];
+---
+
+<section class="projects">
+  <div class="wrapper">
+    <h2 class="projects__title">
+      Наші об'єкти
+    </h2>
+
+    <div class="projects__slider">
+      <button
+        class="projects__arrow projects__arrow--prev"
+        type="button"
+        aria-label="Попередній об'єкт"
+      >
+        &#10094;
+      </button>
+
+      <div class="projects__viewport">
+        <div class="projects__track">
+          {
+            projects.map((project) => (
+              <article class="projects__card">
+                <button
+                  class="projects__open-gallery"
+                  type="button"
+                  aria-label={project.galleryLabel}
+                >
+                  <img
+                    src={project.cover}
+                    alt={project.alt}
+                    class="projects__img"
+                  />
+
+                  <span class="projects__photo-count">
+                    📷 {project.images.length} фото
+                  </span>
+                </button>
+
+                <div class="projects__info">
+                  <h3 class="projects__name">
+                    {project.title}
+                  </h3>
+
+                  <p class="projects__text">
+                    {project.location}
+                  </p>
+                </div>
+
+                <div class="projects__gallery" hidden>
+                  {
+                    project.images.map((image) => (
+                      <img
+                        src={image}
+                        alt={project.alt}
+                      />
+                    ))
+                  }
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+
+      <button
+        class="projects__arrow projects__arrow--next"
+        type="button"
+        aria-label="Наступний об'єкт"
+      >
+        &#10095;
+      </button>
+    </div>
+  </div>
+</section>
+
+<ProjectGallery />

@@ -3,8 +3,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ConsultationSection from "../components/ConsultationSection.astro";
 import PoltavaSolarArticle from "../components/PoltavaSolarArticle.astro";
 import PoltavaProjects from "../components/PoltavaProjects.astro";
-
-import "../styles/poltava.css";
 ---
 
 <BaseLayout
@@ -22,6 +20,7 @@ import "../styles/poltava.css";
 </BaseLayout>
 
 <script>
+  import "../scripts/solarArticle.js";
   import "../scripts/projectsSlider.js";
   import "../scripts/projectGallery.js";
 </script>

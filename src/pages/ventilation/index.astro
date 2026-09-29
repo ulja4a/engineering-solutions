@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ConsultationSection from "../../components/ConsultationSection.astro";
+import IndustrialVentilationArticle from "../../components/IndustrialVentilationArticle.astro";
+import VentilationProjects from "../../components/VentilationProjects.astro";
+---
+
+<BaseLayout
+  title="Монтаж промислової вентиляції у Харкові та Полтаві"
+  description="Проєктування та монтаж промислової вентиляції у Харкові та Полтаві. Припливні, витяжні та припливно-витяжні системи для виробничих, складських і комерційних об'єктів."
+  canonical="https://www.enginsolut.com/ventilation/"
+>
+  <main>
+    <IndustrialVentilationArticle />
+
+    <ConsultationSection
+      source="Консультація — Промислова вентиляція"
+    />
+
+    <VentilationProjects />
+  </main>
+</BaseLayout>
+
+<script>
+  import "../../scripts/solarArticle.js";
+  import "../../scripts/projectsSlider.js";
+  import "../../scripts/projectGallery.js";
+</script>

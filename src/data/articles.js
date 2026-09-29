@@ -63,4 +63,20 @@ export const articles = [
   href: "/heating/batumi/",
   category: "Опалення",
 },
+{
+  title: "Монтаж систем водопостачання",
+  description:
+    "Системи водопостачання будинків і квартир: централізоване та автономне водопостачання, схеми розведення, ГВП і водопідготовка.",
+  image: "/assets/img/water-supply-main.webp",
+  href: "/water-supply/",
+  category: "Водопостачання",
+},
+{
+  title: "Монтаж промислових систем вентиляції",
+  description:
+    "Промислова вентиляція для виробничих, складських і комерційних об'єктів: розрахунок повітрообміну, підбір обладнання та монтаж систем.",
+  image: "/assets/img/industrial-ventilation-main.webp",
+  href: "/ventilation/",
+  category: "Вентиляція",
+},
 ];

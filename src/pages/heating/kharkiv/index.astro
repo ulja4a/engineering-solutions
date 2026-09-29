@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import KharkivHeatingArticle from "../../../components/KharkivHeatingArticle.astro";
+import ConsultationSection from "../../../components/ConsultationSection.astro";
+import KharkivHeatingProjects from "../../../components/KharkivHeatingProjects.astro";
+
+const title =
+  "Монтаж опалення у Харкові під ключ — системи опалення будинку";
+
+const description =
+  "Монтаж систем опалення у Харкові та Харківській області під ключ. Проєктування, монтаж котелень, теплої підлоги та радіаторів. Підбір обладнання та розрахунок вартості.";
+
+const canonical =
+  "https://www.enginsolut.com/heating/kharkiv/";
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+>
+  <main>
+    <KharkivHeatingArticle />
+
+    <div id="consultation">
+      <ConsultationSection source="Консультація — Опалення Харків" />
+    </div>
+
+    <KharkivHeatingProjects />
+  </main>
+</BaseLayout>
+
+<script>
+  import "../../../scripts/solarArticle.js";
+  import "../../../scripts/projectsSlider.js";
+  import "../../../scripts/projectGallery.js";
+</script>

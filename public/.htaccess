@@ -1,0 +1,7 @@
+RewriteEngine On
+
+RewriteRule ^sunenergy\.html$ /sunenergy/ [R=301,L]
+RewriteRule ^harkiv\.html$ /harkiv/ [R=301,L]
+RewriteRule ^poltava\.html$ /poltava/ [R=301,L]
+RewriteRule ^backup-power\.html$ /backup-power/ [R=301,L]
+RewriteRule ^under-development\.html$ /under-development/ [R=301,L]

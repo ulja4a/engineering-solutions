@@ -1,0 +1,26 @@
+---
+import ArticleCard from "./ArticleCard.astro";
+import { articles } from "../data/articles.js";
+---
+
+<section class="articles">
+  <div class="wrapper">
+    <h1 class="articles__title">
+      Статті
+    </h1>
+
+    <div class="articles__grid">
+      {
+        articles.map((article) => (
+          <ArticleCard
+            title={article.title}
+            description={article.description}
+            image={article.image}
+            href={article.href}
+            category={article.category}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,109 @@
+---
+const stations = [
+  {
+    power: "6 кВт",
+    image: "/assets/img/6kvt.jpg",
+    description:
+      "Оптимальне рішення для невеликого приватного будинку",
+    inverter: "гібридний чи мережевий 1 фаза",
+    panels: "8-10 шт.",
+    price: "від 3500 $",
+  },
+  {
+    power: "8 кВт",
+    image: "/assets/img/8kvt.jpg",
+    description:
+      "Популярне рішення для сім'ї із середнім споживанням електроенергії.",
+    inverter: "гібридний чи мережевий 1 фаза",
+    panels: "12-14 шт.",
+    price: "від 4500 $",
+  },
+  {
+    power: "15 кВт",
+    image: "/assets/img/15kvt.jpg",
+    description:
+      "Рішення для будинку з підвищеним споживанням чи невеликому бізнесу",
+    inverter: "гібридний чи мережевий 3 фази",
+    panels: "22-26 шт.",
+    price: "від 6500 $",
+  },
+  {
+    power: "30 кВт",
+    image: "/assets/img/30kvt.jpg",
+    description:
+      "Рішення для бізнесу, фермерського господарства чи під «зелений тариф»",
+    inverter: "гібридний чи мережевий 3 фази",
+    panels: "46-50 шт.",
+    price: "від 11000 $",
+  },
+];
+---
+<section class="solar-examples">
+  <div class="wrapper">
+    <h2 class="solar-examples__title">
+      Комплекти станцій
+    </h2>
+
+    <p class="solar-examples__subtitle">
+      Готові рішення для приватних будинків різної площі та потреб
+    </p>
+
+    <div class="solar-examples__grid">
+      {
+        stations.map((station) => (
+          <article class="solar-card">
+            <img
+              src={station.image}
+              alt={`Сонячна електростанція ${station.power}`}
+              class="solar-card__img"
+            />
+
+            <div class="solar-card__content">
+              <h3 class="solar-card__title">
+                Сонячна станція {station.power}
+              </h3>
+
+              <p class="solar-card__text">
+                {station.description}
+              </p>
+
+              <ul class="solar-card__list">
+                <li class="solar-card__item">
+                  <span class="solar-card__label">
+                    Потужність СЕС:
+                  </span>
+                  {" "}
+                  {station.power}
+                </li>
+
+                <li class="solar-card__item">
+                  <span class="solar-card__label">
+                    Інвертор:
+                  </span>
+                  {" "}
+                  {station.inverter}
+                </li>
+
+                <li class="solar-card__item">
+                  <span class="solar-card__label">
+                    Кількість панелей:
+                  </span>
+                  {" "}
+                  {station.panels}
+                </li>
+
+                <li class="solar-card__item">
+                  <span class="solar-card__label">
+                    Вартість станції:
+                  </span>
+                  {" "}
+                  {station.price}
+                </li>
+              </ul>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

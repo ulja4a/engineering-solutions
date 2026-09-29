@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  href: string;
+  category: string;
+}
+
+const {
+  title,
+  description,
+  image,
+  href,
+  category,
+} = Astro.props;
+---
+
+<article class="article-card">
+  <a href={href} class="article-card__image-link">
+    <img
+      src={image}
+      alt={title}
+      class="article-card__image"
+      loading="lazy"
+    />
+  </a>
+
+  <div class="article-card__content">
+    <span class="article-card__category">
+      {category}
+    </span>
+
+    <h2 class="article-card__title">
+      <a href={href} class="article-card__title-link">
+        {title}
+      </a>
+    </h2>
+
+    <p class="article-card__description">
+      {description}
+    </p>
+
+    <a href={href} class="article-card__link">
+      Читати далі
+    </a>
+  </div>
+</article>

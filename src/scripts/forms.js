@@ -1,0 +1,156 @@
+const forms = document.querySelectorAll(
+  ".callback-form, .consultation__form"
+);
+
+forms.forEach((form) => {
+  const phoneInput = form.querySelector('input[type="tel"]');
+  const nameInput = form.querySelector('input[name="name"]');
+  const sourceInput = form.querySelector('input[name="source"]');
+
+  const message = form.querySelector(
+    ".callback-form__message, .consultation__message"
+  );
+
+  if (!phoneInput || !nameInput) {
+    return;
+  }
+
+  // -----------------------------
+  // Intl Tel Input
+  // -----------------------------
+
+  let iti = null;
+
+  if (window.intlTelInput) {
+    iti = window.intlTelInput(phoneInput, {
+      initialCountry: form.dataset.initialCountry || "ua",
+      countrySelectorMode: "DROPDOWN",
+      separateDialCode: true,
+
+      loadUtils: () =>
+        import(
+          "https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.3/dist/js/utils.js"
+        ),
+    });
+  }
+
+  // -----------------------------
+  // Отправка формы
+  // -----------------------------
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (message) {
+      message.textContent = "";
+      message.classList.remove("active");
+    }
+
+    const name = nameInput.value.trim();
+    const source = sourceInput?.value || "unknown";
+
+    // Проверяем имя
+    if (name.length < 2 || name.length > 30) {
+      if (message) {
+        message.textContent =
+          "Будь ласка, введіть коректне ім'я.";
+        message.classList.add("active");
+      }
+
+      return;
+    }
+
+    // Проверяем телефон
+    if (iti && !iti.isValidNumber()) {
+      if (message) {
+        message.textContent =
+          "Будь ласка, введіть коректний номер телефону.";
+        message.classList.add("active");
+      }
+
+      return;
+    }
+
+    // Получаем полный номер вместе с кодом страны
+    const phone = iti
+      ? iti.getNumber()
+      : phoneInput.value.trim();
+
+    // -----------------------------
+    // Данные для send.php
+    // -----------------------------
+
+    const formData = new FormData();
+
+    formData.append("name", name);
+    formData.append("phone", phone);
+    formData.append("form_source", source);
+
+    formData.append(
+      "page_title",
+      document.title
+    );
+
+    formData.append(
+      "page_url",
+      window.location.href
+    );
+
+    formData.append(
+      "page_path",
+      window.location.pathname
+    );
+
+    // -----------------------------
+    // Отправляем на сервер
+    // -----------------------------
+
+    try {
+      const response = await fetch("/send.php", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(
+          data.message || "Помилка відправки форми"
+        );
+      }
+
+      if (message) {
+        message.textContent =
+          "Дякуємо! Ваша заявка успішно відправлена.";
+        message.classList.add("active");
+      }
+
+      nameInput.value = "";
+      phoneInput.value = "";
+
+        const callbackOverlay = form.closest(
+          ".callback-popup-overlay"
+        );
+
+        if (callbackOverlay) {
+          setTimeout(() => {
+            callbackOverlay.classList.remove("active");
+            document.body.classList.remove("popup-open");
+
+            if (message) {
+              message.textContent = "";
+              message.classList.remove("active");
+            }
+          }, 1500);
+        }
+    } catch (error) {
+      console.error("Form submit error:", error);
+
+      if (message) {
+        message.textContent =
+          "Не вдалося відправити заявку. Спробуйте ще раз.";
+        message.classList.add("active");
+      }
+    }
+  });
+});

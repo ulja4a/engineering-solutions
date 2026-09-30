@@ -119,6 +119,16 @@ forms.forEach((form) => {
         );
       }
 
+      // -----------------------------
+      // Google Analytics
+      // -----------------------------
+
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "consultation_submit", {
+          form_source: source,
+        });
+      }
+
       if (message) {
         message.textContent =
           "Дякуємо! Ваша заявка успішно відправлена.";

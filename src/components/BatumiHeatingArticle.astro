@@ -230,7 +230,7 @@
         <ul class="seo-article__list">
           <li>
             позвонить нам по телефону:
-            <a href="tel:+995558108816" class="seo-article__link">
+            <a href="tel:+995558108816" class="seo-article__link" data-analytics="phone-vlad">
               +995 558 10 88 16
             </a>
             (Влад);
@@ -238,7 +238,7 @@
 
           <li>
             позвонить или написать в WhatsApp, Viber или Telegram по номеру:
-            <a href="tel:+380979690101" class="seo-article__link">
+            <a href="tel:+380979690101" class="seo-article__link" data-analytics="phone-anton">
               +380 97 969 01 01
             </a>
             (Антон).
@@ -280,3 +280,17 @@
     </div>
   </div>
 </section>
+
+<script>
+  document.querySelectorAll('[data-analytics]').forEach((link) => {
+    link.addEventListener('click', () => {
+      const phone = link.getAttribute('data-analytics');
+
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'phone_click', {
+          phone_contact: phone,
+        });
+      }
+    });
+  });
+</script>

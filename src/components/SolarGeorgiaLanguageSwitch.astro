@@ -1,0 +1,55 @@
+---
+interface Props {
+  currentLang: "ru" | "ka";
+}
+
+const { currentLang } = Astro.props;
+---
+
+<nav class="solar-language" aria-label="Выбор языка статьи">
+  <a
+    href="/solar-georgia/ru/"
+    class:list={{ "solar-language__active": currentLang === "ru" }}
+    lang="ru"
+    aria-current={currentLang === "ru" ? "page" : undefined}
+  >
+    RU
+  </a>
+
+  <span aria-hidden="true">|</span>
+
+  <a
+    href="/solar-georgia/ka/"
+    class:list={{ "solar-language__active": currentLang === "ka" }}
+    lang="ka"
+    aria-current={currentLang === "ka" ? "page" : undefined}
+  >
+    GE
+  </a>
+</nav>
+
+<style>
+  .solar-language {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 16px 8px;
+    font-family: Inter, sans-serif;
+  }
+
+  .solar-language a {
+    color: #133b65;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .solar-language a:hover {
+    text-decoration: underline;
+  }
+
+  .solar-language__active {
+    font-weight: 700 !important;
+    text-decoration: underline !important;
+  }
+</style>

@@ -46,7 +46,7 @@
 }
 
 .seo-article__hidden.active {
-  max-height: 6000px;
+  max-height: 10000;
   opacity: 1;
 }
 

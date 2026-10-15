@@ -1,0 +1,47 @@
+
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ConsultationSection from "../../../components/ConsultationSection.astro";
+import SolarGeorgiaArticle from "../../../components/SolarGeorgiaArticle.astro";
+import SolarProjects from "../../../components/SolarProjects.astro";
+import SolarGeorgiaLanguageSwitch from "../../../components/SolarGeorgiaLanguageSwitch.astro";
+
+import "../../../styles/sunenergy.css";
+---
+
+<BaseLayout
+  title="Солнечные электростанции в Грузии — расчёт и монтаж под ключ | Инженерные решения"
+  description="Проектирование, расчёт и монтаж солнечных электростанций в Грузии. Сетевые, гибридные и автономные СЭС для дома и предприятия. Подбор оборудования, установка и настройка."
+  canonical="https://www.enginsolut.com/solar-georgia/ru/"
+  lang="ru"
+  alternates={[
+    {
+      lang: "ru",
+      href: "https://www.enginsolut.com/solar-georgia/ru/",
+    },
+    {
+      lang: "ka",
+      href: "https://www.enginsolut.com/solar-georgia/ka/",
+    },
+  ]}
+>
+  <main class="main">
+    <SolarGeorgiaLanguageSwitch currentLang="ru" />
+
+    <SolarGeorgiaArticle lang="ru" />
+
+    <ConsultationSection
+      source="Консультация — Солнечные электростанции в Грузии"
+      lang="ru"
+      initialCountry="ge"
+    />
+
+    <SolarProjects />
+  </main>
+</BaseLayout>
+
+<script>
+  import "../../../scripts/solarArticle.js";
+  import "../../../scripts/projectsSlider.js";
+  import "../../../scripts/projectGallery.js";
+</script>

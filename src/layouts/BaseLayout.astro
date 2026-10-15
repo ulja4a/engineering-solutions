@@ -10,6 +10,11 @@ interface Props {
   description: string;
   canonical: string;
   robots?: string;
+  lang?: "uk" | "ru" | "ka";
+  alternates?: {
+    lang: string;
+    href: string;
+  }[];
 }
 
 const {
@@ -17,11 +22,13 @@ const {
   description,
   canonical,
   robots,
+  lang = "uk",
+  alternates = [],
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="uk">
+<html lang={lang}>
 
   <head>
     <meta charset="UTF-8" />
@@ -55,6 +62,16 @@ const {
       rel="canonical"
       href={canonical}
     />
+
+    {
+      alternates.map((alternate) => (
+        <link
+          rel="alternate"
+          hreflang={alternate.lang}
+          href={alternate.href}
+        />
+      ))
+    }
 
     <script
       is:inline

@@ -18,12 +18,17 @@ forms.forEach((form) => {
   // -----------------------------
   // Intl Tel Input
   // -----------------------------
+  const isGeorgiaPage = window.location.pathname.startsWith("/solar-georgia/");
+
+  const initialCountry = isGeorgiaPage
+    ? "ge"
+    : form.dataset.initialCountry || "ua";
 
   let iti = null;
 
   if (window.intlTelInput) {
     iti = window.intlTelInput(phoneInput, {
-      initialCountry: form.dataset.initialCountry || "ua",
+      initialCountry,
       countrySelectorMode: "DROPDOWN",
       separateDialCode: true,
 

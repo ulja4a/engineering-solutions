@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ConsultationSection from "../../../components/ConsultationSection.astro";
+import SolarGeorgiaArticleKa from "../../../components/SolarGeorgiaArticleKa.astro";
+import SolarProjects from "../../../components/SolarProjects.astro";
+import SolarGeorgiaLanguageSwitch from "../../../components/SolarGeorgiaLanguageSwitch.astro";
+
+import "../../../styles/sunenergy.css";
+---
+
+<BaseLayout
+  title="მზის ელექტროსადგურები საქართველოში — გაანგარიშება და მონტაჟი სრული მომსახურებით"
+  description="მზის ელექტროსადგურების პროექტირება, გაანგარიშება და მონტაჟი საქართველოში. ქსელური, ჰიბრიდული და ავტონომიური სისტემები სახლებისა და საწარმოებისთვის. აღჭურვილობის შერჩევა, მონტაჟი და გამართვა."
+  canonical="https://www.enginsolut.com/solar-georgia/ka/"
+  lang="ka"
+  alternates={[
+    {
+      lang: "ru",
+      href: "https://www.enginsolut.com/solar-georgia/ru/",
+    },
+    {
+      lang: "ka",
+      href: "https://www.enginsolut.com/solar-georgia/ka/",
+    },
+  ]}
+>
+  <main class="main">
+    <SolarGeorgiaLanguageSwitch currentLang="ka" />
+
+    <SolarGeorgiaArticleKa />
+
+    <ConsultationSection
+      source="კონსულტაცია — მზის ელექტროსადგურები საქართველოში"
+      lang="ka"
+      initialCountry="ge"
+    />
+
+    <SolarProjects />
+  </main>
+</BaseLayout>
+
+<script>
+  import "../../../scripts/solarArticle.js";
+  import "../../../scripts/projectsSlider.js";
+  import "../../../scripts/projectGallery.js";
+</script>

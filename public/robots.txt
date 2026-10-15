@@ -1,8 +1,6 @@
 User-agent: *
 Allow: /
 
-# Не индексируем технические файлы
 Disallow: /send.php
 
-# Карта сайта
 Sitemap: https://www.enginsolut.com/sitemap.xml

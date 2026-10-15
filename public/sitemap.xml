@@ -6,6 +6,10 @@
   </url>
 
   <url>
+    <loc>https://www.enginsolut.com/articles/</loc>
+  </url>
+
+  <url>
     <loc>https://www.enginsolut.com/sunenergy/</loc>
   </url>
 
@@ -19,6 +23,30 @@
 
   <url>
     <loc>https://www.enginsolut.com/backup-power/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.enginsolut.com/heating/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.enginsolut.com/heating/kharkiv/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.enginsolut.com/heating/poltava/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.enginsolut.com/heating/batumi/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.enginsolut.com/water-supply/</loc>
+  </url>
+
+  <url>
+    <loc>https://www.enginsolut.com/ventilation/</loc>
   </url>
 
 </urlset>

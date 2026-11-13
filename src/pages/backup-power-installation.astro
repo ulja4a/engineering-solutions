@@ -1,0 +1,27 @@
+
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ConsultationSection from "../components/ConsultationSection.astro";
+import BackupPowerInstallationArticle from "../components/BackupPowerInstallationArticle.astro";
+import BackupPowerProjects from "../components/BackupPowerProjects.astro";
+---
+
+<BaseLayout
+  title="Монтаж резервного живлення у Харкові та Полтаві | Інженерні рішення"
+  description="Монтаж систем резервного живлення у Харкові та Полтаві. Встановлення інверторів та акумуляторів, підключення до електромережі, налаштування та перевірка."
+  canonical="https://www.enginsolut.com/backup-power-installation/"
+>
+  <main class="main">
+    <BackupPowerInstallationArticle />
+
+    <ConsultationSection source="Консультація — монтаж резервного живлення" />
+
+    <BackupPowerProjects />
+  </main>
+</BaseLayout>
+
+<script>
+  import "../scripts/solarArticle.js";
+  import "../scripts/projectsSlider.js";
+  import "../scripts/projectGallery.js";
+</script>
